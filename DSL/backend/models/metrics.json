@@ -1,0 +1,223 @@
+{
+  "trained_at": "2026-09-11 00:19:03",
+  "total_samples": 5000,
+  "train_samples": 4000,
+  "test_samples": 1000,
+  "feature_columns": [
+    "duration",
+    "src_port",
+    "dst_port",
+    "packet_count",
+    "packet_size",
+    "bytes_per_sec",
+    "packets_per_sec",
+    "flow_bytes",
+    "num_conn",
+    "conn_duration",
+    "failed_conn",
+    "proto_TCP",
+    "proto_UDP",
+    "proto_ICMP",
+    "proto_HTTP",
+    "proto_DNS"
+  ],
+  "attack_classes": [
+    "Botnet",
+    "Brute Force",
+    "DDoS",
+    "DoS",
+    "Normal",
+    "Port Scan",
+    "Web Attack"
+  ],
+  "models": {
+    "random_forest": {
+      "name": "Random Forest",
+      "type": "Supervised Ensemble",
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": {
+          "true_negative": 650,
+          "false_positive": 0,
+          "false_negative": 0,
+          "true_positive": 350,
+          "matrix": [
+            [
+              650,
+              0
+            ],
+            [
+              0,
+              350
+            ]
+          ]
+        }
+      },
+      "feature_importance": [
+        {
+          "feature": "packet_count",
+          "importance": 0.217
+        },
+        {
+          "feature": "flow_bytes",
+          "importance": 0.159
+        },
+        {
+          "feature": "num_conn",
+          "importance": 0.1589
+        },
+        {
+          "feature": "failed_conn",
+          "importance": 0.1522
+        },
+        {
+          "feature": "packet_size",
+          "importance": 0.1129
+        },
+        {
+          "feature": "packets_per_sec",
+          "importance": 0.0707
+        },
+        {
+          "feature": "bytes_per_sec",
+          "importance": 0.0439
+        },
+        {
+          "feature": "conn_duration",
+          "importance": 0.0354
+        }
+      ]
+    },
+    "decision_tree": {
+      "name": "Decision Tree",
+      "type": "Supervised Tree",
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "confusion_matrix": {
+          "true_negative": 650,
+          "false_positive": 0,
+          "false_negative": 0,
+          "true_positive": 350,
+          "matrix": [
+            [
+              650,
+              0
+            ],
+            [
+              0,
+              350
+            ]
+          ]
+        }
+      }
+    },
+    "isolation_forest": {
+      "name": "Isolation Forest",
+      "type": "Unsupervised Anomaly Detector",
+      "metrics": {
+        "accuracy": 0.795,
+        "precision": 0.7077,
+        "recall": 0.7057,
+        "f1": 0.7067,
+        "confusion_matrix": {
+          "true_negative": 548,
+          "false_positive": 102,
+          "false_negative": 103,
+          "true_positive": 247,
+          "matrix": [
+            [
+              548,
+              102
+            ],
+            [
+              103,
+              247
+            ]
+          ]
+        }
+      }
+    }
+  },
+  "multiclass_confusion_matrix": {
+    "labels": [
+      "Botnet",
+      "Brute Force",
+      "DDoS",
+      "DoS",
+      "Normal",
+      "Port Scan",
+      "Web Attack"
+    ],
+    "matrix": [
+      [
+        30,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        50,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        80,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        100,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        650,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        70,
+        0
+      ],
+      [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        18
+      ]
+    ]
+  }
+}
